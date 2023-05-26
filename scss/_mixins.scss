@@ -1,0 +1,5 @@
+@mixin gridLayout($display, $template-column, $template-row){
+    display: $display;
+    grid-template-columns: $template-column;
+    grid-template-rows: $template-row;
+}

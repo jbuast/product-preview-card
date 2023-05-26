@@ -1,0 +1,128 @@
+@use 'variables';
+@use 'mixins';
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:wght@500;700&display=swap');
+
+// Mobile View
+*{
+    padding: 0;
+    margin: 0;
+   
+}
+
+body{
+    min-width: 100%;
+    min-height: 100vh;
+    font-size: 14px;
+    font-family: variables.$primary-font;
+    background-color: variables.$cream-bg;
+}
+main{
+    .container{
+        @include gridLayout(grid, 240px 371px, 343px);
+        justify-content: center;
+        padding-top: 28px;
+    }
+    .container-image{
+        background: url('../images/image-product-mobile.jpg') / cover;
+        border-radius: 10px 10px 0 0;
+    }
+    .container-context{
+        background-color: variables.$pure-white;
+        border-radius: 0 0 10px 10px;
+        padding: 24px;
+        .p-first, .p-second{
+            color: variables.$aurometal-saurus;
+        }
+        .p-first{
+            padding: 0 0 12px 0 ;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-size: 0.86em;
+        }
+        .secondary-font{
+            font-family: variables.$secondary-font;
+        }
+        h1.secondary-font{
+            font-size: 2.29em;
+            line-height: 32px;
+            padding-bottom: 16px;
+        }
+        .p-second{
+            line-height: 23px;
+            padding-bottom: 24px;
+        }
+        .context-price{
+            display: flex;
+            align-items: center;
+            padding-bottom: 20px;
+            .left-price{
+                padding-right: 19px;
+                font-size: 2.29em;
+                color: variables.$deep-aquamarine;
+            }
+            .right-price{
+                text-decoration: line-through;
+                color: variables.$aurometal-saurus;
+            }
+        }
+        .addToCartBtn{
+            display: flex;
+            justify-content: center;
+            background-color: variables.$deep-aquamarine;
+            padding: 15px 0;
+            border-radius: 8px;
+            img{
+                padding-right: 11.61px;
+            }
+            p{
+                color: variables.$pure-white;
+                font-weight: 700;
+            }
+        }
+        
+    }
+}
+
+// Desktop View
+@media screen and (min-width:1000px) {
+    body{
+        display: grid;
+        place-items: center;
+    }
+    main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        .container{
+            @include gridLayout(grid, repeat(2, 300px), 450px);
+            padding: 0;
+        }
+        .container-image{
+            background : url('../images/image-product-desktop.jpg') / cover;
+            border-radius: 10px 0 0 10px;
+        }
+        .container-context{
+            border-radius: 0 10px 10px 0;
+            .p-first{
+                padding-bottom: 20px;
+            }
+            .p-second{
+                padding-bottom: 29px;
+            }
+            h1.secondary-font{
+                padding-bottom: 24px;
+            }
+            .context-price{
+                padding-bottom: 30px;
+            }
+            .addToCartBtn:hover{
+                background-color: variables.$deep-aquamarine-hover;
+            }
+        }
+    }
+}
+
+
+
