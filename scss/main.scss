@@ -19,13 +19,17 @@ body{
 }
 main{
     .container{
-        @include gridLayout(grid, 240px 371px, 343px);
+        @include mixins.gridLayout(grid, 343px, 240px 371px);
         justify-content: center;
         padding-top: 28px;
     }
     .container-image{
-        background: url('../images/image-product-mobile.jpg') / cover;
-        border-radius: 10px 10px 0 0;
+        img{
+            width: 343px;
+            height: 240px;
+            border-radius: 10px 10px 0 0;
+        }
+       
     }
     .container-context{
         background-color: variables.$pure-white;
@@ -96,15 +100,19 @@ main{
         align-items: center;
         
         .container{
-            @include gridLayout(grid, repeat(2, 300px), 450px);
+            @include mixins.gridLayout(grid, repeat(2, 300px), 450px);
             padding: 0;
         }
         .container-image{
-            background : url('../images/image-product-desktop.jpg') / cover;
-            border-radius: 10px 0 0 10px;
+            img{
+                width: 300px;
+                height: 450px;
+                border-radius: 10px 0 0 10px;
+            }
         }
         .container-context{
             border-radius: 0 10px 10px 0;
+            padding: 32px;
             .p-first{
                 padding-bottom: 20px;
             }

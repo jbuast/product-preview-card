@@ -5,8 +5,8 @@
 }
 
 body {
-  width: 100%;
-  height: 100vh;
+  min-width: 100%;
+  min-height: 100vh;
   font-size: 14px;
   font-family: "Montserrat";
   background-color: #F2EAE2;
@@ -14,15 +14,14 @@ body {
 
 main .container {
   display: grid;
-  grid-template-rows: 240px 371px;
   grid-template-columns: 343px;
+  grid-template-rows: 240px 371px;
   justify-content: center;
-  box-sizing: border-box;
   padding-top: 28px;
 }
-main .container-image {
-  background-image: url("../images/image-product-mobile.jpg");
-  background-size: cover;
+main .container-image img {
+  width: 343px;
+  height: 240px;
   border-radius: 10px 10px 0 0;
 }
 main .container-context {
@@ -96,13 +95,14 @@ main .container-context .addToCartBtn p {
     grid-template-rows: 450px;
     padding: 0;
   }
-  main .container-image {
-    background-image: url("../images/image-product-desktop.jpg");
-    background-size: cover;
+  main .container-image img {
+    width: 300px;
+    height: 450px;
     border-radius: 10px 0 0 10px;
   }
   main .container-context {
     border-radius: 0 10px 10px 0;
+    padding: 32px;
   }
   main .container-context .p-first {
     padding-bottom: 20px;
